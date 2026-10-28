@@ -2,13 +2,43 @@
   "name": "antibody-inspection",
   "displayName": "Antibody Inspection",
   "description": "Local-first antibody sequence inspection for VS Code.",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "publisher": "yktsnd",
   "license": "Apache-2.0",
-  "engines": { "vscode": "^1.85.0" },
-  "categories": ["Other"],
-  "activationEvents": ["onCommand:antibodyInspection.open"],
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:antibodyInspection.open"
+  ],
   "main": "./src/extension.js",
-  "contributes": { "commands": [{ "command": "antibodyInspection.open", "title": "Antibody Inspection: Open Workspace" }] },
-  "scripts": { "test": "node --test test/*.test.js", "check": "node --check src/extension.js && node --check src/fasta.js && node --check src/project.js && node --check src/view.js" }
+  "contributes": {
+    "commands": [
+      {
+        "command": "antibodyInspection.open",
+        "title": "Antibody Inspection: Open Workspace"
+      }
+    ]
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "check": "node --check src/extension.js && node --check src/fasta.js && node --check src/project.js && node --check src/view.js && node --check src/alignment.js",
+    "package": "vsce package --no-dependencies",
+    "test:electron": "node scripts/test-electron.js"
+  },
+  "devDependencies": {
+    "@vscode/test-electron": "2.5.2",
+    "@vscode/vsce": "4.1.0",
+    "jsdom": "26.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yktsnd/antibody-inspection.git"
+  },
+  "extensionKind": [
+    "ui"
+  ]
 }
