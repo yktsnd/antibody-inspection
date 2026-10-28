@@ -1,0 +1,234 @@
+[
+  {
+    "id": "S01",
+    "title": "TAP 2019",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6410772/",
+    "type": "一次論文",
+    "requirement_basis": "Fvの参照指標・分布。実装定義と参照集団の版を固定する",
+    "checked_on": "2026-10-28"
+  },
+  {
+    "id": "S02",
+    "title": "TAP 2024",
+    "url": "https://www.nature.com/articles/s42003-023-05744-8",
+    "type": "一次論文",
+    "requirement_basis": "更新された構造・参照分布、κ/λの比較。配布・データ条件は別途照合",
+    "checked_on": "2026-10-28"
+  },
+  {
+    "id": "S03",
+    "title": "LAP 2024",
+    "url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1011881",
+    "type": "一次論文",
+    "requirement_basis": "モチーフを生殖細胞系列・治療用抗体・構造の文脈で調べる",
+    "checked_on": "2026-10-28"
+  },
+  {
+    "id": "S04",
+    "title": "Jain et al. 2017",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5293111/",
+    "type": "一次論文",
+    "requirement_basis": "複数の物性測定と、共通IgG1形式で測定した試料の区別",
+    "checked_on": "2026-10-28"
+  },
+  {
+    "id": "S05",
+    "title": "IMGT/mAb-DB",
+    "url": "https://imgt.org/mAb-DB/doc.action",
+    "type": "公式仕様",
+    "requirement_basis": "形式・由来・特異性・Fc情報を別軸で管理",
+    "checked_on": "2026-10-28"
+  },
+  {
+    "id": "S06",
+    "title": "IMGT Fragment",
+    "url": "https://www.imgt.org/IMGTindex/fragment.php",
+    "type": "公式定義",
+    "requirement_basis": "Fab/Fv/Fcなどの区画と鎖・ドメインの関係",
+    "checked_on": "2026-10-28"
+  },
+  {
+    "id": "S07",
+    "title": "IMGT CDR/FR",
+    "url": "https://www.imgt.org/IMGTScientificChart/Nomenclature/IMGT-FRCDRdefinition.html",
+    "type": "公式定義",
+    "requirement_basis": "番号・領域定義・長さ",
+    "checked_on": "2026-10-28"
+  },
+  {
+    "id": "S08",
+    "title": "IMGT engineered Fc variants",
+    "url": "https://www.imgt.org/IMGTbiotechnology/IGHG_variant/Tableau1.html",
+    "type": "公式データ",
+    "requirement_basis": "Fcの既知変化と作用を参照情報として扱う",
+    "checked_on": "2026-10-28"
+  },
+  {
+    "id": "S09",
+    "title": "IgBLAST",
+    "url": "https://ncbi.github.io/igblast/",
+    "type": "公式仕様",
+    "requirement_basis": "核酸・タンパク質入力と生殖細胞系列の照合",
+    "checked_on": "2026-10-28"
+  },
+  {
+    "id": "S10",
+    "title": "AIRR rearrangement schema",
+    "url": "https://docs.airr-community.org/en/stable/datarep/rearrangements.html",
+    "type": "公式仕様",
+    "requirement_basis": "鎖・配列・接合部・遺伝子候補・由来IDを保持",
+    "checked_on": "2026-10-28"
+  },
+  {
+    "id": "S11",
+    "title": "abYsis",
+    "url": "https://www.chemogenomix.com/abysis",
+    "type": "公式製品説明",
+    "requirement_basis": "位置特異的な残基分布・番号付け・配列/構造比較",
+    "checked_on": "2026-10-28"
+  },
+  {
+    "id": "S12",
+    "title": "BioPhi",
+    "url": "https://github.com/Merck/BioPhi",
+    "type": "公式実装",
+    "requirement_basis": "人源性・人源化。結果の文脈とローカル実行",
+    "checked_on": "2026-10-28"
+  },
+  {
+    "id": "S13",
+    "title": "SCALOP",
+    "url": "https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/sabpred/scalop/scalop_example",
+    "type": "公式仕様",
+    "requirement_basis": "対応するCDRのcanonical form。H3を同列の分類対象にしない",
+    "checked_on": "2026-10-28"
+  },
+  {
+    "id": "S14",
+    "title": "Paragraph",
+    "url": "https://github.com/oxpig/Paragraph",
+    "type": "公式実装",
+    "requirement_basis": "パラトープ推定を実測接触・CDRと区別",
+    "checked_on": "2026-10-28"
+  },
+  {
+    "id": "S15",
+    "title": "IEDB B-cell tools",
+    "url": "https://tools.iedb.org/main/bcell/",
+    "type": "公式仕様",
+    "requirement_basis": "抗原上のエピトープ情報と予測の別管理",
+    "checked_on": "2026-10-28"
+  },
+  {
+    "id": "S16",
+    "title": "Thera-SAbDab",
+    "url": "https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/therasabdab/about",
+    "type": "公式データ",
+    "requirement_basis": "治療用抗体と対応する構造の参照",
+    "checked_on": "2026-10-28"
+  },
+  {
+    "id": "S17",
+    "title": "PLAbDab",
+    "url": "https://opig.stats.ox.ac.uk/webapps/plabdab/about/",
+    "type": "公式データ",
+    "requirement_basis": "文献・特許由来の配列/構造の参照",
+    "checked_on": "2026-10-28"
+  },
+  {
+    "id": "S18",
+    "title": "RCSB validation",
+    "url": "https://www.rcsb.org/docs/general-help/deposition-resources",
+    "type": "公式仕様",
+    "requirement_basis": "構造全体・局所の品質と実験根拠",
+    "checked_on": "2026-10-28"
+  },
+  {
+    "id": "S19",
+    "title": "FreeSASA",
+    "url": "https://freesasa.github.io/",
+    "type": "公式実装",
+    "requirement_basis": "溶媒露出の計算候補。定義と条件を固定",
+    "checked_on": "2026-10-28"
+  },
+  {
+    "id": "S20",
+    "title": "PDV",
+    "url": "https://pdv.naturalantibody.com/docs/docs.html",
+    "type": "公式製品説明",
+    "requirement_basis": "ローカル構造観察、選択、計測、セッション。再利用はライセンス確認が必要",
+    "checked_on": "2026-10-28"
+  },
+  {
+    "id": "S21",
+    "title": "Jalview linked views",
+    "url": "https://www.jalview.org/help/html/features/annotation.html",
+    "type": "公式仕様",
+    "requirement_basis": "配列・構造・行列の対応選択",
+    "checked_on": "2026-10-28"
+  },
+  {
+    "id": "S22",
+    "title": "ANARCII",
+    "url": "https://github.com/oxpig/ANARCII",
+    "type": "公式実装",
+    "requirement_basis": "番号付け候補。ANARCIと版を区別",
+    "checked_on": "2026-10-28"
+  },
+  {
+    "id": "S23",
+    "title": "RIOT",
+    "url": "https://github.com/NaturalAntibody/riot_na",
+    "type": "公式実装",
+    "requirement_basis": "複数可変領域の注釈候補。利用条件を確認",
+    "checked_on": "2026-10-28"
+  },
+  {
+    "id": "S24",
+    "title": "Mol* selection API",
+    "url": "https://molstar.org/docs/v5/plugin/selections/",
+    "type": "公式仕様",
+    "requirement_basis": "構造表示と対象選択の接続",
+    "checked_on": "2026-10-28"
+  },
+  {
+    "id": "S25",
+    "title": "VS Code Webview",
+    "url": "https://code.visualstudio.com/api/extension-guides/webview",
+    "type": "公式仕様",
+    "requirement_basis": "画面とメッセージ連携",
+    "checked_on": "2026-10-28"
+  },
+  {
+    "id": "S26",
+    "title": "VS Code extension host",
+    "url": "https://code.visualstudio.com/api/advanced-topics/extension-host",
+    "type": "公式仕様",
+    "requirement_basis": "ローカル/リモート実行場所",
+    "checked_on": "2026-10-28"
+  },
+  {
+    "id": "S27",
+    "title": "ImmuneBuilder",
+    "url": "https://github.com/oxpig/ImmuneBuilder",
+    "type": "公式実装",
+    "requirement_basis": "ローカルFv/VHH構造予測候補",
+    "checked_on": "2026-10-28"
+  },
+  {
+    "id": "S28",
+    "title": "IEDB MHC-II",
+    "url": "https://tools.iedb.org/mhcii/",
+    "type": "公式仕様",
+    "requirement_basis": "HLAとペプチド長を指定したMHC-II結合予測。免疫原性の別要素",
+    "checked_on": "2026-10-28"
+  },
+  {
+    "id": "S29",
+    "title": "FLAb",
+    "url": "https://github.com/Graylab/FLAb",
+    "type": "公式データ",
+    "requirement_basis": "多種類の抗体実験データと各データセットの文脈",
+    "checked_on": "2026-10-28"
+  }
+]

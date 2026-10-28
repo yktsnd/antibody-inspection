@@ -20,6 +20,23 @@ test('webview renders hostile names as text, selects ranges and sends comparison
   assert.equal(sent.at(-1).referenceId,project.records[1].id);
   assert.equal(sent.at(-1).recordId,project.records[0].id);
   document.getElementById('save').click(); assert.equal(sent.at(-1).type,'save');
-  assert.equal(document.getElementById('status').textContent,'Unsaved changes');
+  assert.match(document.getElementById('status').textContent,/Unsaved changes/);
+  window.close();
+});
+test('typed notes send explicit record identity without Apply and alignment columns map insertions', () => {
+  const sent = [];
+  const dom = new JSDOM(render('vscode-webview:'), { runScripts: 'dangerously', beforeParse(window) { window.acquireVsCodeApi = () => ({ postMessage: m => sent.push(m) }); } });
+  const { window } = dom; const document = window.document;
+  document.getElementById('demo').click(); assert.equal(sent.at(-1).type, 'demo');
+  const project = newProject('>Ref\nACDE\n>Variant\nACFDE'); const selected = project.records[1].id;
+  window.dispatchEvent(new window.MessageEvent('message', { data: { type: 'project', project, selected, dirty: false } }));
+  const textarea = document.getElementById('note'); textarea.value = 'Keep this observation'; textarea.dispatchEvent(new window.Event('input'));
+  assert.deepEqual(JSON.parse(JSON.stringify(sent.at(-1))), { type: 'setNote', recordId: selected, note: 'Keep this observation' });
+  window.dispatchEvent(new window.MessageEvent('message', { data: { type: 'dirty', dirty: true } }));
+  assert.equal(textarea.value, 'Keep this observation');
+  window.dispatchEvent(new window.MessageEvent('message', { data: { type: 'comparison', referenceId: project.records[0].id, recordId: selected, result: require('../src/alignment').align('ACDE', 'ACFDE') } }));
+  document.querySelectorAll('.column')[2].click();
+  assert.match(document.getElementById('focus').textContent, /reference input position gap · selected input position 3/);
+  assert.equal(document.querySelector('#sequence .selected').dataset.pos, '3');
   window.close();
 });

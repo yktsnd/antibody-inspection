@@ -20,3 +20,6 @@ test('rejects invalid ranges, malformed provenance and altered input', () => {
   const withRange = addAnnotation(p, id, { kind: 'CDR1', start: 1, end: 2, definition: '' });
   withRange.records[0].annotations[0].evidence = 'computed'; assert.throws(() => validateProject(withRange));
 });
+test('rejects an import whose retained original plus normalized records cannot be saved', () => {
+  assert.throws(() => newProject('>large\n' + 'A'.repeat(6 * 1024 * 1024)), /including original input/);
+});
