@@ -8,6 +8,8 @@ async function run() {
   const commands = await vscode.commands.getCommands();
   assert.ok(commands.includes('antibodyInspection.open'), 'command registered');
   await vscode.commands.executeCommand('antibodyInspection.open');
+  const deadline = Date.now() + 10000;
+  while (!vscode.window.tabGroups.all.flatMap(g => g.tabs).some(tab => tab.label === 'Antibody Inspection') && Date.now() < deadline) await new Promise(resolve => setTimeout(resolve, 100));
   assert.ok(vscode.window.tabGroups.all.flatMap(g => g.tabs).some(tab => tab.label === 'Antibody Inspection'), 'inspection webview opened');
   console.log('Extension host smoke test passed: activation, command registration, webview opening.');
 }
