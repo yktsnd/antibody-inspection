@@ -2,12 +2,13 @@
 const vscode = require('vscode');
 const { newProject, validateProject, addAnnotation, removeAnnotation, setNote, MAX_BYTES } = require('./project');
 const { render } = require('./view');
+const { align, quality } = require('./alignment');
 function activate(context) {
   context.subscriptions.push(vscode.commands.registerCommand('antibodyInspection.open', () => {
     if (vscode.env.remoteName) { vscode.window.showErrorMessage('Antibody Inspection requires a local VS Code window.'); return; }
     const panel = vscode.window.createWebviewPanel('antibodyInspection', 'Antibody Inspection', vscode.ViewColumn.One, { enableScripts: true, retainContextWhenHidden: true });
     let project = null, selected = null, projectUri = null, dirty = false;
-    const publish = () => panel.webview.postMessage({ type: 'project', project, selected, dirty });
+    const publish = () => panel.webview.postMessage({ type: 'project', project, selected, dirty, quality: project ? quality(project.records) : [] });
     panel.webview.html = render(panel.webview.cspSource);
     panel.webview.onDidReceiveMessage(async message => {
       try {
@@ -26,6 +27,12 @@ function activate(context) {
           project = next; selected = next.records[0]?.id || null; projectUri = message.type === 'openProject' ? file : null; dirty = message.type === 'import'; await publish(); return;
         }
         if (!project) return;
+        if (message.type === 'compare') {
+          const reference = project.records.find(r => r.id === message.referenceId);
+          const query = project.records.find(r => r.id === message.recordId);
+          if (!reference || !query) throw new Error('Select two sequences for comparison.');
+          await panel.webview.postMessage({ type: 'comparison', referenceId: reference.id, recordId: query.id, result: align(reference.sequence, query.sequence) });
+        }
         if (message.type === 'addAnnotation') { project = addAnnotation(project, selected, message.annotation); dirty = true; await publish(); }
         if (message.type === 'removeAnnotation') { project = removeAnnotation(project, selected, message.id); dirty = true; await publish(); }
         if (message.type === 'setNote') { project = setNote(project, selected, message.note); dirty = true; await publish(); }
