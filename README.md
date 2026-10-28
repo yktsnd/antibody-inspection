@@ -5,6 +5,8 @@ An English-language, local-first VS Code workspace for researchers to inspect an
 ## Current functionality
 
 - Open a local FASTA file and inspect its sequences.
+- Save and reopen a local JSON project that retains the original input, annotations and notes.
+- Mark sequence ranges manually with a definition or source and select them to highlight corresponding residues. Positions are 1-based and inclusive.
 - Preserve multiple entries and show unassigned interpretation explicitly.
 - No network access or telemetry is implemented.
 
@@ -20,7 +22,7 @@ The intended product links molecular maps, numbering and CDR definitions, alignm
 
 ## Privacy and scope
 
-This prototype reads only the file selected by the user. Data is held in the open view and is not saved across sessions. It is research software, not a diagnostic device.
+This prototype reads only the file selected by the user. Use Save to persist data; unsaved changes will be lost if the view is closed. Remote VS Code windows are blocked. It is research software, not a diagnostic device.
 
 ## License
 
