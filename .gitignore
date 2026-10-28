@@ -2,3 +2,6 @@ node_modules/
 .vscode-test/
 *.vsix
 test-results/
+node_modules
+.vscode-test
+SHA256SUMS

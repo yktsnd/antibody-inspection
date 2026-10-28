@@ -1,5 +1,8 @@
-name: Validate and package
-on: [push, pull_request]
+name: Validate, install and release
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:
@@ -14,9 +17,35 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run check
-      - run: xvfb-run -a npm run test:electron
       - run: npm run package
+      - run: xvfb-run -a npm run test:electron
+      - name: Checksum tested package
+        run: sha256sum antibody-inspection-*.vsix > SHA256SUMS
       - uses: actions/upload-artifact@v4
         with:
           name: antibody-inspection-vsix
-          path: '*.vsix'
+          path: |
+            *.vsix
+            SHA256SUMS
+          if-no-files-found: error
+  release:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: verify
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: antibody-release
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: antibody-inspection-vsix
+      - name: Publish tested VSIX as a public GitHub Release
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { publishRelease } = require('./scripts/release.js');
+            const result = await publishRelease({ github, context });
+            core.notice(`${result.skipped ? 'Already published' : 'Published'}: ${result.url}`);

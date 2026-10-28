@@ -1,0 +1,223 @@
+[
+  {
+    "id": "Fab",
+    "kind": "fragment",
+    "shortExplanation": "VH + CH1 と VL + CL にまたがる範囲",
+    "containsConcepts": [
+      "Fv",
+      "CH1",
+      "CL"
+    ],
+    "domainKinds": [
+      "VH",
+      "VK",
+      "VL",
+      "CH1",
+      "CL"
+    ],
+    "motif": "multi-chain-bracket",
+    "sourceId": "S06"
+  },
+  {
+    "id": "Fv",
+    "kind": "fragment",
+    "shortExplanation": "対応するVHとVLからなる可変領域",
+    "containsConcepts": [
+      "VH",
+      "VL"
+    ],
+    "domainKinds": [
+      "VH",
+      "VK",
+      "VL"
+    ],
+    "motif": "paired-domain-bracket",
+    "sourceId": "S06"
+  },
+  {
+    "id": "Fc",
+    "kind": "fragment",
+    "shortExplanation": "定常領域側の範囲。hinge境界は定義を併記",
+    "containsConcepts": [
+      "CH2",
+      "CH3"
+    ],
+    "domainKinds": [
+      "CH2",
+      "CH3"
+    ],
+    "motif": "constant-region-bracket",
+    "sourceId": "S06"
+  },
+  {
+    "id": "VH",
+    "kind": "domain",
+    "shortExplanation": "重鎖側の可変ドメイン",
+    "containsConcepts": [
+      "CDR",
+      "FR"
+    ],
+    "domainKinds": [
+      "VH"
+    ],
+    "motif": "domain-block",
+    "sourceId": "S07"
+  },
+  {
+    "id": "VL",
+    "kind": "domain",
+    "shortExplanation": "軽鎖側の可変ドメイン。κ/λは別の分類軸",
+    "containsConcepts": [
+      "CDR",
+      "FR"
+    ],
+    "domainKinds": [
+      "VK",
+      "VL"
+    ],
+    "motif": "domain-block",
+    "sourceId": "S07"
+  },
+  {
+    "id": "CDR",
+    "kind": "region",
+    "shortExplanation": "可変ドメイン内で定義された領域",
+    "containsConcepts": [],
+    "domainKinds": [],
+    "motif": "sequence-band-and-loop",
+    "sourceId": "S07"
+  },
+  {
+    "id": "FR",
+    "kind": "region",
+    "shortExplanation": "CDRと区分される可変ドメインの領域",
+    "containsConcepts": [],
+    "domainKinds": [],
+    "motif": "sequence-band",
+    "sourceId": "S07"
+  },
+  {
+    "id": "IgG1",
+    "kind": "isotype",
+    "shortExplanation": "重鎖定常領域に関係するサブクラス",
+    "containsConcepts": [],
+    "domainKinds": [],
+    "motif": "attribute-axis",
+    "sourceId": "S05"
+  },
+  {
+    "id": "kappa",
+    "kind": "lightchain",
+    "shortExplanation": "軽鎖の型の一つ",
+    "containsConcepts": [],
+    "domainKinds": [
+      "VK"
+    ],
+    "motif": "light-chain-axis",
+    "sourceId": "S05"
+  },
+  {
+    "id": "lambda",
+    "kind": "lightchain",
+    "shortExplanation": "軽鎖の型の一つ",
+    "containsConcepts": [],
+    "domainKinds": [
+      "VL"
+    ],
+    "motif": "light-chain-axis",
+    "sourceId": "S05"
+  },
+  {
+    "id": "scFv",
+    "kind": "format",
+    "shortExplanation": "VHとVLをリンカーでつないだ構成",
+    "containsConcepts": [],
+    "domainKinds": [],
+    "motif": "ordered-domain-path",
+    "sourceId": "S06"
+  },
+  {
+    "id": "epitope",
+    "kind": "interface",
+    "shortExplanation": "抗原側の認識部位。根拠別に表示",
+    "containsConcepts": [],
+    "domainKinds": [],
+    "motif": "antigen-side-surface",
+    "sourceId": "S15"
+  },
+  {
+    "id": "paratope",
+    "kind": "interface",
+    "shortExplanation": "抗体側の認識部位。CDRとは別に表示",
+    "containsConcepts": [],
+    "domainKinds": [],
+    "motif": "antibody-side-surface",
+    "sourceId": "S14"
+  },
+  {
+    "id": "CH1",
+    "kind": "domain",
+    "shortExplanation": "重鎖側の第1定常ドメイン",
+    "containsConcepts": [],
+    "domainKinds": [
+      "CH1"
+    ],
+    "motif": "domain-block",
+    "sourceId": "S06"
+  },
+  {
+    "id": "CH2",
+    "kind": "domain",
+    "shortExplanation": "重鎖側の第2定常ドメイン",
+    "containsConcepts": [],
+    "domainKinds": [
+      "CH2"
+    ],
+    "motif": "domain-block",
+    "sourceId": "S06"
+  },
+  {
+    "id": "CH3",
+    "kind": "domain",
+    "shortExplanation": "重鎖側の第3定常ドメイン",
+    "containsConcepts": [],
+    "domainKinds": [
+      "CH3"
+    ],
+    "motif": "domain-block",
+    "sourceId": "S06"
+  },
+  {
+    "id": "CL",
+    "kind": "domain",
+    "shortExplanation": "軽鎖側の定常ドメイン",
+    "containsConcepts": [],
+    "domainKinds": [
+      "CL"
+    ],
+    "motif": "domain-block",
+    "sourceId": "S06"
+  },
+  {
+    "id": "hinge",
+    "kind": "region",
+    "shortExplanation": "ドメイン間をつなぐ重鎖側の領域",
+    "containsConcepts": [],
+    "domainKinds": [
+      "hinge"
+    ],
+    "motif": "connecting-segment",
+    "sourceId": "S06"
+  },
+  {
+    "id": "linker",
+    "kind": "region",
+    "shortExplanation": "融合ドメイン等をつなぐ配列区間",
+    "containsConcepts": [],
+    "domainKinds": [
+      "linker"
+    ],
+    "motif": "connecting-segment",
+    "sourceId": "S06"
+  }
+]

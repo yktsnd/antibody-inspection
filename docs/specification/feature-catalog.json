@@ -1,0 +1,850 @@
+[
+  {
+    "id": "I01",
+    "release": "R1",
+    "domain": "入力",
+    "name": "FASTA・CSV/TSV・貼付入力",
+    "inputs": "配列/列定義",
+    "outputs": "原文と正規化配列",
+    "view": "Import",
+    "acceptance": "原文を保持し列対応をプレビュー",
+    "source_ids": [
+      "S10"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "I02",
+    "release": "R1",
+    "domain": "入力",
+    "name": "核酸・アミノ酸の識別と翻訳対応",
+    "inputs": "DNA/RNA/AA",
+    "outputs": "読み枠・AA↔codon対応",
+    "view": "Import/Sequence",
+    "acceptance": "曖昧時は選択を求め、逆翻訳しない",
+    "source_ids": [
+      "S09"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "I03",
+    "release": "R1",
+    "domain": "入力",
+    "name": "鎖ペアと分子のグループ化",
+    "inputs": "分子ID/鎖ID",
+    "outputs": "鎖所属・ペア根拠",
+    "view": "Map",
+    "acceptance": "行順でペア確定しない",
+    "source_ids": [
+      "S10"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "I04",
+    "release": "R1",
+    "domain": "入力",
+    "name": "重複・断片・未知残基の確認",
+    "inputs": "入力配列",
+    "outputs": "QC注釈",
+    "view": "Import/Sequence",
+    "acceptance": "同配列の試料を勝手に統合しない",
+    "source_ids": [
+      "S10"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "I05",
+    "release": "R2",
+    "domain": "入力",
+    "name": "AIRR・NGS・クローン情報",
+    "inputs": "AIRR TSV",
+    "outputs": "clone/cell/countの関連",
+    "view": "Collection",
+    "acceptance": "read countとclone数を区別",
+    "source_ids": [
+      "S10"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "M01",
+    "release": "R1",
+    "domain": "分子",
+    "name": "鎖・ドメイン・定常領域の検出",
+    "inputs": "配列",
+    "outputs": "境界と型候補",
+    "view": "Map",
+    "acceptance": "未知区間を残し検出器の対象範囲を示す",
+    "source_ids": [
+      "S05",
+      "S06",
+      "S23"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "M02",
+    "release": "R1",
+    "domain": "分子",
+    "name": "クラス/κλ/形式/完全性の多軸分類",
+    "inputs": "ドメイン・配列",
+    "outputs": "属性と根拠",
+    "view": "Map/Collection",
+    "acceptance": "VHのみでIgGを確定しない",
+    "source_ids": [
+      "S05"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "M03",
+    "release": "R1",
+    "domain": "分子",
+    "name": "Fab/scFv/Fc融合/複数Fvの構成",
+    "inputs": "ドメイン/鎖対応",
+    "outputs": "分子構成候補",
+    "view": "Map",
+    "acceptance": "構成と抗原特異性を区別",
+    "source_ids": [
+      "S06"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "M04",
+    "release": "R1",
+    "domain": "分子",
+    "name": "視覚用語辞典と意味に応じた拡大",
+    "inputs": "概念/選択",
+    "outputs": "部位図・包含関係",
+    "view": "Map/Inspector",
+    "acceptance": "Fab→Fv→VH→CDRへ移動し対応配列を維持",
+    "source_ids": [
+      "S06",
+      "S07"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "M05",
+    "release": "R2",
+    "domain": "分子",
+    "name": "糖鎖・修飾・ADC・融合部分",
+    "inputs": "実験/構造/メタデータ",
+    "outputs": "部位と化学情報",
+    "view": "Map/Structure",
+    "acceptance": "配列モチーフから実際の修飾を確定しない",
+    "source_ids": [
+      "S05",
+      "S08"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "Q01",
+    "release": "R1",
+    "domain": "配列",
+    "name": "番号付けとCDR定義",
+    "inputs": "可変領域",
+    "outputs": "複数座標対応",
+    "view": "Sequence",
+    "acceptance": "挿入コードを含め元残基へ往復できる",
+    "source_ids": [
+      "S07",
+      "S22"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "Q02",
+    "release": "R1",
+    "domain": "配列",
+    "name": "抗体番号に基づくアラインメント",
+    "inputs": "対応ドメイン",
+    "outputs": "整列と差分",
+    "view": "Sequence",
+    "acceptance": "非相同ドメイン・リンカーを無条件に整列しない",
+    "source_ids": [
+      "S11"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "Q03",
+    "release": "R1",
+    "domain": "配列",
+    "name": "CDR抽出・長さ・組成",
+    "inputs": "番号/領域",
+    "outputs": "領域表と選択",
+    "view": "Sequence/Collection",
+    "acceptance": "定義変更は依存する表示/計算のみ更新",
+    "source_ids": [
+      "S01",
+      "S07"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "Q04",
+    "release": "R1",
+    "domain": "配列",
+    "name": "生殖細胞系列候補と由来類似性",
+    "inputs": "配列/参照",
+    "outputs": "候補と差分・被覆率",
+    "view": "Sequence/Inspector",
+    "acceptance": "AAのみの入力で非対応遺伝子割当を生成しない",
+    "source_ids": [
+      "S09"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "Q05",
+    "release": "R1",
+    "domain": "配列",
+    "name": "位置ごとの残基頻度・保存性",
+    "inputs": "整列/参照集団",
+    "outputs": "頻度/エントロピー/ロゴ",
+    "view": "Sequence",
+    "acceptance": "分母・欠損・重複・集団条件を表示",
+    "source_ids": [
+      "S11"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "Q06",
+    "release": "R2",
+    "domain": "配列",
+    "name": "canonical loop・VH/VL配置",
+    "inputs": "配列/構造",
+    "outputs": "手法固有分類・配置指標",
+    "view": "Sequence/Structure",
+    "acceptance": "手法の対応領域外は適用外",
+    "source_ids": [
+      "S13"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "Q07",
+    "release": "R1",
+    "domain": "配列",
+    "name": "完全一致・類似配列・領域検索",
+    "inputs": "ローカル配列群",
+    "outputs": "検索結果と対応",
+    "view": "Collection/Sequence",
+    "acceptance": "同一性の分母と被覆率を表示",
+    "source_ids": [
+      "S16",
+      "S17"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "Q08",
+    "release": "R2",
+    "domain": "配列",
+    "name": "多様性・クラスタ・系統の観察",
+    "inputs": "比較群",
+    "outputs": "クラスタと設定",
+    "view": "Collection",
+    "acceptance": "同一配列と推定クローンを区別",
+    "source_ids": [
+      "S10"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "S01",
+    "release": "R1",
+    "domain": "構造",
+    "name": "PDB/mmCIFと鎖の対応",
+    "inputs": "構造/配列",
+    "outputs": "モデルと対応表",
+    "view": "Structure",
+    "acceptance": "欠損・author/label ID・assemblyを保持",
+    "source_ids": [
+      "S18"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "S02",
+    "release": "R1",
+    "domain": "構造",
+    "name": "局所選択・距離・表現切替",
+    "inputs": "対応構造",
+    "outputs": "選択/距離/画像",
+    "view": "Structure",
+    "acceptance": "原子選択とÅを表示",
+    "source_ids": [
+      "S20",
+      "S24"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "S03",
+    "release": "R1",
+    "domain": "構造",
+    "name": "構造品質・予測信頼度の層",
+    "inputs": "構造/品質ファイル",
+    "outputs": "局所品質注釈",
+    "view": "Structure/Sequence",
+    "acceptance": "B因子とpLDDTを混同しない",
+    "source_ids": [
+      "S18"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "S04",
+    "release": "R1",
+    "domain": "構造",
+    "name": "重ね合わせと領域別比較",
+    "inputs": "対応構造群",
+    "outputs": "変換行列/RMSD",
+    "view": "Structure",
+    "acceptance": "fit領域と評価領域を個別保存",
+    "source_ids": [
+      "S20"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "S05",
+    "release": "R1",
+    "domain": "構造",
+    "name": "SASA・接触・ジスルフィド",
+    "inputs": "構造",
+    "outputs": "領域/残基/結合候補",
+    "view": "Structure",
+    "acceptance": "距離候補と結合情報を区別",
+    "source_ids": [
+      "S19",
+      "S20"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "S06",
+    "release": "R1",
+    "domain": "構造",
+    "name": "ローカルFv/VHH予測",
+    "inputs": "対応配列",
+    "outputs": "予測構造/手法固有信頼度",
+    "view": "Structure/Jobs",
+    "acceptance": "Fv予測を全長構造として描かない",
+    "source_ids": [
+      "S27"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "S07",
+    "release": "R2",
+    "domain": "構造",
+    "name": "モデル群・PAE・可動性の観察",
+    "inputs": "複数構造/PAE",
+    "outputs": "モデル選択/変動表示",
+    "view": "Structure",
+    "acceptance": "予測誤差と物理的動揺を区別",
+    "source_ids": [
+      "S18",
+      "S21"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "B01",
+    "release": "R1",
+    "domain": "相互作用",
+    "name": "抗原の登録と対応",
+    "inputs": "抗原配列/構造/由来",
+    "outputs": "抗原・isoform・状態",
+    "view": "Map/Binding",
+    "acceptance": "抗原種・構成体・修飾を保持",
+    "source_ids": [
+      "S15"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "B02",
+    "release": "R1",
+    "domain": "相互作用",
+    "name": "複合体接触・界面観察",
+    "inputs": "複合体構造",
+    "outputs": "接触集合/界面面積",
+    "view": "Structure/Binding",
+    "acceptance": "接触とCDRとパラトープ予測を分ける",
+    "source_ids": [
+      "S14",
+      "S15"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "B03",
+    "release": "R1",
+    "domain": "相互作用",
+    "name": "親和性・kinetics・活性の取り込み",
+    "inputs": "測定表",
+    "outputs": "条件付き観測値",
+    "view": "Evidence",
+    "acceptance": "KD/EC50/kon/koffを別endpointとして保存",
+    "source_ids": [
+      "S04",
+      "S15"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "B04",
+    "release": "R2",
+    "domain": "相互作用",
+    "name": "epitope bin・競合・変異/HDX情報",
+    "inputs": "実験表",
+    "outputs": "関係行列/部位注釈",
+    "view": "Binding/Sequence",
+    "acceptance": "競合関係だけで同じエピトープと断定しない",
+    "source_ids": [
+      "S15"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "B05",
+    "release": "R2",
+    "domain": "相互作用",
+    "name": "パラトープ/エピトープ予測",
+    "inputs": "配列/構造",
+    "outputs": "予測注釈",
+    "view": "Structure/Binding",
+    "acceptance": "予測対象とモデル適用範囲を表示",
+    "source_ids": [
+      "S14",
+      "S15"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "D01",
+    "release": "R1",
+    "domain": "物性",
+    "name": "理論MW/pI/電荷/疎水性",
+    "inputs": "配列/条件",
+    "outputs": "指標と定義",
+    "view": "Collection/Distributions",
+    "acceptance": "末端・領域・pH等の条件を保存",
+    "source_ids": [
+      "S01"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "D02",
+    "release": "R1",
+    "domain": "物性",
+    "name": "化学的liabilityと構造文脈",
+    "inputs": "モチーフ/構造/参照",
+    "outputs": "位置と補助根拠",
+    "view": "Sequence/Structure",
+    "acceptance": "モチーフ存在を反応率として表示しない",
+    "source_ids": [
+      "S03"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "D03",
+    "release": "R1",
+    "domain": "物性",
+    "name": "TAP指標と版固定ヒストグラム",
+    "inputs": "Fv/構造/参照",
+    "outputs": "5指標/分布/位置",
+    "view": "Distributions",
+    "acceptance": "プロトコル不一致を識別し0補完しない",
+    "source_ids": [
+      "S01",
+      "S02"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "D04",
+    "release": "R1",
+    "domain": "物性",
+    "name": "複数の参照集団と比較条件",
+    "inputs": "参照パック/結果",
+    "outputs": "分布と適合状態",
+    "view": "Distributions",
+    "acceptance": "候補フィルターで参照分布を変えない",
+    "source_ids": [
+      "S02"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "D05",
+    "release": "R1",
+    "domain": "物性",
+    "name": "発現・安定性・凝集・非特異結合の実験値",
+    "inputs": "試料/測定表",
+    "outputs": "条件付き結果",
+    "view": "Evidence/Distributions",
+    "acceptance": "ロット・濃度・buffer・温度を関連付ける",
+    "source_ids": [
+      "S04",
+      "S29"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "D06",
+    "release": "R2",
+    "domain": "物性",
+    "name": "凝集/溶解性/粘度/自己会合等の予測",
+    "inputs": "対応入力",
+    "outputs": "モデル固有推定",
+    "view": "Distributions",
+    "acceptance": "各モデルの適用形式と条件を表示",
+    "source_ids": [
+      "S04"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "H01",
+    "release": "R1",
+    "domain": "人源性",
+    "name": "人源性の評価・参照比較",
+    "inputs": "VH/VL/参照",
+    "outputs": "指標/領域注釈",
+    "view": "Sequence/Distributions",
+    "acceptance": "由来生物・免疫原性と区別",
+    "source_ids": [
+      "S12"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "H02",
+    "release": "R2",
+    "domain": "人源性",
+    "name": "MHC-II等の免疫原性関連注釈",
+    "inputs": "外部結果/対応手法",
+    "outputs": "アレル/peptide注釈",
+    "view": "Sequence/Evidence",
+    "acceptance": "HLA条件と手法を必須化しADA率に読み替えない",
+    "source_ids": [
+      "S28"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "F01",
+    "release": "R1",
+    "domain": "定常領域",
+    "name": "Fc/hinge/CLの観察と番号対応",
+    "inputs": "定常領域/参照",
+    "outputs": "領域・差分・既知変化",
+    "view": "Map/Sequence",
+    "acceptance": "EU/IMGTの対応元と参照を保持",
+    "source_ids": [
+      "S08"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "F02",
+    "release": "R2",
+    "domain": "定常領域",
+    "name": "Fc受容体・補体・半減期関連",
+    "inputs": "文献/実験/構造",
+    "outputs": "作用と根拠の関係",
+    "view": "Evidence/Binding",
+    "acceptance": "変異名だけで実測機能を確定しない",
+    "source_ids": [
+      "S08"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "F03",
+    "release": "R2",
+    "domain": "定常領域",
+    "name": "糖鎖・DAR・結合部位の実測",
+    "inputs": "試料解析",
+    "outputs": "修飾・測定値",
+    "view": "Map/Evidence",
+    "acceptance": "分子設計と試料の化学状態を区別",
+    "source_ids": [
+      "S05",
+      "S08"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "E01",
+    "release": "R1",
+    "domain": "証拠",
+    "name": "構成体と試料・ロットの分離",
+    "inputs": "ID/metadata",
+    "outputs": "試料リンク",
+    "view": "Evidence",
+    "acceptance": "同一配列でも異なる試料を保持",
+    "source_ids": [
+      "S04"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "E02",
+    "release": "R1",
+    "domain": "証拠",
+    "name": "単位・反復・検出限界・条件",
+    "inputs": "測定表",
+    "outputs": "正規化値と原文",
+    "view": "Evidence",
+    "acceptance": "<値を正確な観測値へ変換しない",
+    "source_ids": [
+      "S04"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "E03",
+    "release": "R1",
+    "domain": "証拠",
+    "name": "論文・DB・特許・ファイルの出所",
+    "inputs": "文献/ローカル資料",
+    "outputs": "証拠リンク",
+    "view": "Inspector/Evidence",
+    "acceptance": "文献由来と自動推定を分ける",
+    "source_ids": [
+      "S16",
+      "S17"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "E04",
+    "release": "R1",
+    "domain": "証拠",
+    "name": "実験・計算・注釈の比較",
+    "inputs": "同一対象への結果",
+    "outputs": "比較可能性と欠測",
+    "view": "Evidence/Distributions",
+    "acceptance": "条件不明な結果の平均化を防ぐ",
+    "source_ids": [
+      "S04"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "K01",
+    "release": "R1",
+    "domain": "参照",
+    "name": "ローカル参照パックと版固定",
+    "inputs": "許可済みDB/辞書",
+    "outputs": "索引とmetadata",
+    "view": "Reference",
+    "acceptance": "出所/版/利用条件/欠損を保持",
+    "source_ids": [
+      "S16",
+      "S17"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "K02",
+    "release": "R1",
+    "domain": "参照",
+    "name": "統合検索・別名・ID解決",
+    "inputs": "ローカル全対象",
+    "outputs": "対象と出所へのリンク",
+    "view": "Collection/Inspector",
+    "acceptance": "同名で異なる配列を自動統合しない",
+    "source_ids": [
+      "S16"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "K03",
+    "release": "R2",
+    "domain": "参照",
+    "name": "既知抗体/文献の類似探索",
+    "inputs": "ローカルDB",
+    "outputs": "ヒットと対応領域",
+    "view": "Collection",
+    "acceptance": "類似配列から標的や権利状態を確定しない",
+    "source_ids": [
+      "S17"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "U01",
+    "release": "R1",
+    "domain": "操作",
+    "name": "hover/select/focus/pinの統一",
+    "inputs": "共通対象ID",
+    "outputs": "連動状態",
+    "view": "All",
+    "acceptance": "hoverでカメラやフィルターを変更しない",
+    "source_ids": [
+      "S20",
+      "S21"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "U02",
+    "release": "R1",
+    "domain": "操作",
+    "name": "保存した観察状態・履歴・メモ",
+    "inputs": "view state",
+    "outputs": "snapshot",
+    "view": "All",
+    "acceptance": "版・カメラ・選択・参照群を再現",
+    "source_ids": [
+      "S20"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "U03",
+    "release": "R1",
+    "domain": "操作",
+    "name": "図・表・配列・条件の出力",
+    "inputs": "選択対象",
+    "outputs": "標準ファイル/レポート",
+    "view": "All",
+    "acceptance": "出力範囲と条件が一致",
+    "source_ids": [
+      "S21"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "U04",
+    "release": "R1",
+    "domain": "操作",
+    "name": "キーボード/色覚/テーマ/空状態",
+    "inputs": "UI",
+    "outputs": "操作可能な画面",
+    "view": "All",
+    "acceptance": "hoverなしでも重要情報へ到達",
+    "source_ids": [
+      "S25"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "U05",
+    "release": "R1",
+    "domain": "操作",
+    "name": "視覚的な知識の段階表示",
+    "inputs": "概念/部位/関係",
+    "outputs": "全体→鎖→ドメイン→残基",
+    "view": "Map",
+    "acceptance": "図の形だけで分類軸を混同させない",
+    "source_ids": [
+      "S06",
+      "S07"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "X01",
+    "release": "R1",
+    "domain": "基盤",
+    "name": "オフライン導入・更新・診断",
+    "inputs": "実行環境パック",
+    "outputs": "再現可能な環境",
+    "view": "Settings",
+    "acceptance": "通信遮断下で基本作業を完了",
+    "source_ids": [
+      "S25",
+      "S26"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "X02",
+    "release": "R1",
+    "domain": "基盤",
+    "name": "背景実行・取消・キャッシュ",
+    "inputs": "依存付きjob",
+    "outputs": "結果/状態",
+    "view": "Jobs",
+    "acceptance": "失敗候補だけ再実行できる",
+    "source_ids": [
+      "S26"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "X03",
+    "release": "R1",
+    "domain": "基盤",
+    "name": "拡張の共通出力契約",
+    "inputs": "adapter manifest",
+    "outputs": "列/track/構造layer/分布",
+    "view": "All",
+    "acceptance": "追加解析で独自画面を要求しない",
+    "source_ids": [
+      "S24",
+      "S25"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "X04",
+    "release": "R1",
+    "domain": "基盤",
+    "name": "入力変更と結果の版管理",
+    "inputs": "入力digest/依存",
+    "outputs": "stale状態",
+    "view": "All",
+    "acceptance": "古い結果を新入力の結果と見せない",
+    "source_ids": [
+      "S25"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "Z01",
+    "release": "R3",
+    "domain": "任意設計",
+    "name": "変異・人源化案と系譜",
+    "inputs": "親配列/設計案",
+    "outputs": "派生構成体",
+    "view": "Design",
+    "acceptance": "元配列を変更せず別IDを作る",
+    "source_ids": [
+      "S12"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  },
+  {
+    "id": "Z02",
+    "release": "R3",
+    "domain": "任意設計",
+    "name": "docking/MD/de novoへの接続",
+    "inputs": "必要入力/外部結果",
+    "outputs": "計算結果参照",
+    "view": "Jobs/Structure",
+    "acceptance": "ローカル資源と実行条件を明示",
+    "source_ids": [
+      "S14"
+    ],
+    "requirement_origin": "公開資料と研究作業からの設計推論。利用者全体の需要頻度を実測した結果ではない"
+  }
+]
