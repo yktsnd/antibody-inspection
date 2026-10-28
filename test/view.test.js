@@ -1,0 +1,25 @@
+'use strict';
+const test = require('node:test');
+const assert = require('node:assert/strict');
+const { JSDOM } = require('jsdom');
+const { render } = require('../src/view');
+const { newProject } = require('../src/project');
+test('webview renders hostile names as text, selects ranges and sends comparison', () => {
+  const sent = [];
+  const dom = new JSDOM(render('vscode-webview:'), { runScripts: 'dangerously', beforeParse(window) { window.acquireVsCodeApi = () => ({ postMessage: m => sent.push(m) }); } });
+  const { window } = dom; const document = window.document;
+  const project = newProject('><img src=x onerror=alert(1)>\nACDE\n>Second\nACFDE');
+  project.records[0].annotations.push({id:'region1',kind:'CDR1',start:2,end:3,definition:'manual',evidence:'user'});
+  window.dispatchEvent(new window.MessageEvent('message', { data: { type:'project',project,selected:project.records[0].id,dirty:true,quality:[] } }));
+  assert.equal(document.querySelectorAll('img').length,0);
+  assert.equal(document.getElementById('name').textContent,project.records[0].name);
+  document.querySelector('#regions button').click();
+  assert.equal(document.querySelectorAll('#sequence .selected').length,2);
+  document.getElementById('reference').value = project.records[1].id;
+  document.getElementById('compare').click();
+  assert.equal(sent.at(-1).referenceId,project.records[1].id);
+  assert.equal(sent.at(-1).recordId,project.records[0].id);
+  document.getElementById('save').click(); assert.equal(sent.at(-1).type,'save');
+  assert.equal(document.getElementById('status').textContent,'Unsaved changes');
+  window.close();
+});
