@@ -5,16 +5,22 @@ An English-language, local-first VS Code workspace for researchers to inspect an
 ## Current functionality
 
 - Open a local FASTA file and inspect its sequences.
+- Compare sequences with a generic global alignment and explicit residue mappings; this does not perform antibody numbering.
+- See exact duplicates, ambiguous letters, gaps, stop symbols and alphabet ambiguity.
 - Save and reopen a local JSON project that retains the original input, annotations and notes.
 - Mark sequence ranges manually with a definition or source and select them to highlight corresponding residues. Positions are 1-based and inclusive.
 - Preserve multiple entries and show unassigned interpretation explicitly.
 - No network access or telemetry is implemented.
 
+## Install
+
+In VS Code, run **Extensions: Install from VSIX...** and choose `antibody-inspection-0.1.0.vsix`. Then run **Antibody Inspection: Open Workspace**.
+
 ## Run
 
 Open this folder in VS Code, press F5 to launch the Extension Development Host, then run **Antibody Inspection: Open Workspace** from the command palette. Select a local FASTA file.
 
-Run `npm test` and `npm run check` with Node.js. No dependencies are required for these checks.
+Run `npm test` and `npm run check` with Node.js. Run `npm ci` first to install development and test tools. `npm run package` builds the installable VSIX; `npm run test:electron` runs a VS Code extension-host smoke test (Linux requires a display, for example `xvfb-run -a npm run test:electron`).
 
 ## Roadmap
 
