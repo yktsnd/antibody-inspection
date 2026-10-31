@@ -1,0 +1,31 @@
+{
+  "view": {
+    "selectedRecordId": "abc86582-8206-406a-a176-a67b9bf43d3f",
+    "tab": "Structure",
+    "structureId": "c6d01429-e262-4e1c-8254-86e5e13ad5d1",
+    "selection": {
+      "start0": 96,
+      "end0": 109,
+      "label": "Heavy CDR3 · IMGT",
+      "evidence": "inferred"
+    },
+    "selectedTargets": [
+      {
+        "recordId": "abc86582-8206-406a-a176-a67b9bf43d3f",
+        "start0": 96,
+        "end0": 109,
+        "label": "Heavy CDR3 · IMGT",
+        "evidence": "inferred"
+      }
+    ]
+  },
+  "structureId": "c6d01429-e262-4e1c-8254-86e5e13ad5d1",
+  "selection": {
+    "start0": 96,
+    "end0": 109,
+    "label": "Heavy CDR3 · IMGT",
+    "evidence": "inferred"
+  },
+  "rendering": "3Dmol.js 2.5.3",
+  "exportedAt": "2026-10-30T03:07:33.787Z"
+}

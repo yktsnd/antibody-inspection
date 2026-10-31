@@ -1,76 +1,90 @@
 # Antibody Inspection
 
-A local VS Code extension for inspecting sequences, manual ranges and observations. **v0.2.0 is an R0 engineering prototype.** It does not yet implement the full antibody research environment described in the [requirements and scope](docs/requirements.md).
+**Follow an antibody from sequence to structure—and keep the evidence with it.**
 
-**[Download antibody-inspection-0.2.0.vsix](https://github.com/yktsnd/antibody-inspection/releases/download/v0.2.0/antibody-inspection-0.2.0.vsix)** · [Release page and checksum](https://github.com/yktsnd/antibody-inspection/releases/tag/v0.2.0) · [All releases](https://github.com/yktsnd/antibody-inspection/releases)
+Antibody Inspection brings domain maps, numbered sequences, molecular structures and reference populations into one VS Code workspace. Select a CDR, inspect the corresponding residues in 3D, compare a local prediction with experimental coordinates, and save the observation as a portable project.
 
-## Install and open
+Your sequences stay on your computer. No account or API key is required.
 
-You need **desktop Visual Studio Code 1.85 or newer**, in a **local window** on your computer. Browser VS Code, WSL, SSH, containers and Codespaces are not supported. Node.js, Python, an account and external analysis tools are **not required to use the extension**. The extension is distributed here as a VSIX; it is not published in the VS Code Marketplace.
+![Herceptin Fv rendered in Antibody Inspection, with the selected heavy-chain CDR3 highlighted](docs/media/herceptin-fv.png)
 
-1. Download **antibody-inspection-0.2.0.vsix** using the link above. On the release page it is under **Assets**; do not choose **Source code** ZIP/tar.gz.
-2. Open VS Code. Open the Command Palette with **Ctrl+Shift+P** (Windows/Linux) or **Cmd+Shift+P** (macOS).
-3. Run **Extensions: Install from VSIX...**, select the downloaded file, and accept VS Code's installation prompt. If prompted, reload the window.
-4. Open the Command Palette again and run **Antibody Inspection: Open Workspace**.
-5. Click **Try synthetic example**. You should see three sequence entries on the left and the selected sequence in the main panel. No file preparation or network access is needed for this example.
+*Actual application export: locally predicted Herceptin Fv, with heavy-chain CDR3 selected. This image shows a predicted variable-domain model, not the full antibody or an antigen-bound prediction. [Export metadata](docs/media/herceptin-fv.png.json).*
 
-Optional command-line installation, if the `code` command is available:
+## Try the research workflow
 
-```sh
-code --install-extension antibody-inspection-0.2.0.vsix
-```
+Install the supplied `.vsix` using **Extensions: Install from VSIX** in desktop VS Code. Then run **Antibody Inspection: Explore Guided Demo** from the Command Palette, or select the antibody icon in the Activity Bar.
 
-## First inspection: five minutes
+**The demo works immediately, offline, without Python setup.** It includes deposited Herceptin Fab / HER2 data from [PDB 1N8Z](https://www.rcsb.org/structure/1N8Z), precomputed sequence analysis, a real locally generated Fv prediction and published reference populations.
 
-The built-in example contains artificial teaching strings, **not real antibodies**. Their names begin with `SYNTHETIC`. These demonstrate software behavior only.
-
-1. Select **SYNTHETIC_B** in the sequence list. Choose **SYNTHETIC_A** as the reference and click **Align with selected sequence**. The top row is the reference and the bottom row is the selected sequence. Click the insertion column: the detail line should show **reference input position gap · selected input position 11**.
-2. Set a manual range: **Type: other**, **Start: 5**, **End: 10**, **Definition or source: teaching range only**. Click **Add range**. Click its coordinate bar or range button. Positions 5–10 are highlighted. These are 1-based inclusive input positions, not antibody numbering.
-3. Type an observation, for example `Inspect the inserted residue`. Notes enter the project as you type; there is no Apply step.
-4. Click **Save**, choose a local `.json` filename, and wait for **Saved project**. Selection, reference, selected manual range, notes, original FASTA and normalized sequences are retained.
-5. Close the tab, run **Antibody Inspection: Open Workspace**, click **Open project**, and choose the saved JSON. Your selected sequence and range should return. Select **SYNTHETIC_A_COPY** to see the exact-duplicate input check.
-
-**Save before closing the inspection tab or VS Code. Unsaved projects are not recovered.** Re-running Open Workspace while the tab is open brings that tab forward. Importing another file or opening a different project asks before discarding unsaved changes.
-
-For your own data, click **Import FASTA** and choose a local UTF-8 `.fasta`, `.fa`, `.faa` or `.txt` file. See the [user guide](docs/user-guide.md) for the accepted format, bounds and troubleshooting.
-
-## What this version does
-
-| Available now | Not implemented |
+| Observation | What you can inspect |
 | --- | --- |
-| FASTA import; original text and normalized sequence retention | CSV/TSV/AIRR import, nucleotide translation, chain pairing |
-| Input checks for duplicates, ambiguous letters, gaps, stops and alphabet ambiguity | Antibody identification, numbering, automatic CDR/FR assignments |
-| Generic pairwise global alignment; clickable original-position mapping | Antibody-aware or multiple-sequence alignment |
-| Manual ranges with definition/source text and linked coordinate bars | Molecular topology, domain inference, Fab/Fv/Fc maps, 3D structures |
-| Per-sequence notes; JSON project save/reopen; selected record/range/reference | TAP/developability, germline/humanness, experimental/source evidence models, full saved views |
+| Molecular composition | Explicit heavy, light and antigen identities; Fab and Fv sequence ranges |
+| Sequence | IMGT positions, insertion codes, CDRs and amino-acid germline reference candidates |
+| Experimental structure | The Fab / HER2 complex, linked residue selection and atomic distances |
+| Prediction comparison | Framework fitting and CDR3 evaluation, with separate residue sets |
+| Surface profile | Local hydrophobic and charged-residue exposure, connected patches and selected-chain scope |
+| Reference populations | OASis peptide identity and published TAP2 distributions with fixed denominators |
+| Evidence | Source records, calculation conditions, notes and saved observations |
 
-A coordinate bar shows a manual sequence range. It is not a molecular structure. CDR and FR are optional labels supplied by the researcher; choosing one does not validate its boundaries. Sequence alone is not used to infer antigen specificity, species, assembly or clinical properties. Read the [full scope matrix](docs/requirements.md) before planning scientific use.
+Use **Next observation** to follow the seven-step tour. You can explore any tab freely, return to a tour step, and **Save as** your own project. Read the [five-minute demo guide](docs/demo.md) for the exact observations and their interpretation.
 
-## Privacy and files
+## Bring your own data
 
-The extension processes selected local files and the bundled synthetic example. It implements no network requests or telemetry. Its JSON projects contain the original sequence data and notes in plain text; store and share them accordingly. VS Code's own services and other installed extensions have their own behavior. The extension blocks remote VS Code windows.
+1. **Import** FASTA, CSV or TSV, or paste sequences. Original text is preserved. Assign chain roles and construct relationships explicitly.
+2. Open **Workspace tools → Analysis runtime**. Install the private runtime or choose an existing compatible Python environment. The tested Windows setup uses Python 3.12; first installation needs internet access.
+3. **Analyze collection** to calculate numbering, CDR/FR regions and sequence properties. Antigen records are excluded from antibody numbering.
+4. Load PDB or mmCIF coordinates, inspect mapped residues, and record observations. Optional model preparation enables local Fv/VHH prediction.
+5. **Save** a portable JSON project with sequences, results, coordinates, references and view state. Export FASTA, an analysis report or a structure image with metadata.
 
-Imports and saved JSON projects are limited to **10 MiB**; the saved project includes both original and normalized input, so large FASTA inputs may be rejected before import. Sequence rendering shows the first **10,000 characters** while retaining the complete input. Alignment requires **ungapped A–Z strings** and at most **2,000,000 dynamic-programming cells**, counting the extra boundary row/column.
+[Full user guide](docs/user-guide.md) · [Scientific definitions and limitations](docs/requirements.md) · [Project format](docs/project-format.md)
 
-## Development and contributions
+## What is available
 
-To build from source, use **Node.js 24** and npm:
+| Area | Implemented capabilities |
+| --- | --- |
+| Sequences | FASTA / quoted tables / paste; retained duplicates; explicit nucleotide translation; original-input coordinates |
+| Domains | ANARCII IMGT/Kabat numbering; independent CDR definitions and composition; multi-domain offsets; constant-domain reference similarity |
+| Comparisons | Numbered alignments, positional counts and entropy; amino-acid V/J reference candidates with coverage and tied-best counts |
+| Structures | Bundled 3D viewer; PDB/mmCIF parsing; deposited biological assemblies; conservative sequence mapping; residue selection; distance and contact tables |
+| Geometry | SASA and pairwise buried area; source-annotated disulfides; Cα superposition with independent fit/evaluation selections |
+| Prediction | Optional local ImmuneBuilder Fv/VHH ensemble and OpenMM refinement; model checksums and calculation provenance |
+| Properties | Molecular weight, pI, charge at pH 7.4, GRAVY, sequence motifs and OASis human-reference peptide identity |
+| Evidence | Censored measurements, specimen/lot/conditions, sources, notes, pinned ranges and saved observations |
+
+### Scientific scope
+
+This is a research inspection application. Similarity candidates do not establish germline gene assignment or species of origin. Peptide humanness does not predict immunogenicity. Sequence motifs do not establish a chemical reaction rate. Close contacts do not prove binding.
+
+TAP2 reference populations are included; **official candidate TAP scoring is not included**. The extension instead provides an independent, open-source [local surface profile](docs/surface-profile.md). It does not require SAbBox. A reference histogram alone is not a candidate evaluation. Predicted structures cover Fv or VHH only; they do not include antigen, constant domains or linkers. Prediction B-column values represent ensemble coordinate dispersion in Å, not pLDDT.
+
+The original R1 acceptance scope is still in progress, including complete binding-unit connectivity, constant-region EU numbering and offline runtime distribution. [The acceptance matrix](docs/requirements.md) distinguishes implemented, partial and missing functionality. This package is not presented as a completed R1 release.
+
+## Local data, explicit setup
+
+The extension has no telemetry and does not send sequences to an analysis service. The viewer has no external network access. Runtime setup downloads packages; explicit model preparation downloads official weights. After those resources are available, supported analysis runs locally. VS Code and other installed extensions have their own behavior.
+
+Projects are readable JSON, with a 64 MiB file limit. Recovery retains recent unsaved work in VS Code extension storage; saving a project creates a portable file. [Privacy and storage details](docs/privacy.md).
+
+## Development and verification
+
+Use Node.js 24 and Python 3.12:
 
 ```sh
-git clone https://github.com/yktsnd/antibody-inspection.git
-cd antibody-inspection
 npm ci
-npm test
 npm run check
+npm test
+python -m venv .venv
+# Activate the environment, then:
+python -m pip install -r worker/requirements.txt
+python -m unittest discover -s test -p '*_test.py'
 npm run package
+npm run test:electron
 ```
 
-This creates `antibody-inspection-0.2.0.vsix` in the repository root. You can install it using the steps above. To debug source, open this repository in VS Code and press **F5**, then run the command in the Extension Development Host.
+The Windows dependency lock is `worker/requirements-lock-windows-py312.txt`. F5 opens a development host. Electron tests install the packaged VSIX into an isolated VS Code profile; `VSCODE_EXECUTABLE_PATH` selects an existing installation. Model-based validation additionally requires prepared prediction weights.
 
-`npm run test:electron` installs the packaged VSIX into an isolated profile and tests activation, command registration, bundled example presence and webview opening in VS Code **1.85.2**. It requires a display and downloads that VS Code test runtime on first use. On Linux: `xvfb-run -a npm run test:electron`. Run `npm run package` first. CI runs all checks before release publication. The scripted smoke test does not verify every visual interaction or scientific correctness; the unit/integration suite covers the walkthrough, note persistence and coordinate mapping.
+For reproducible errors, include the extension version, VS Code version, operating system and a minimal public or synthetic input in a [GitHub issue](https://github.com/yktsnd/antibody-inspection/issues). Do not attach confidential sequences or project files to public issues.
 
-See [contributing and release process](CONTRIBUTING.md), [project format](docs/project-format.md), and [requirements](docs/requirements.md). No private sequence data should be committed to issues, fixtures or screenshots. Use synthetic reproducers.
+## License and sources
 
-## License
-
-Apache License 2.0 for this repository's original code. Third-party engines, models and reference datasets are not bundled. Their scientific validity and redistribution terms must be assessed before integration. Research software; not a diagnostic device.
+Original code is Apache-2.0. Bundled libraries, public reference adaptations and separately installed scientific engines retain their own terms; see [third-party notices](THIRD_PARTY_NOTICES.md). The demo cites Cho et al. (2003), [doi:10.1038/nature01392](https://doi.org/10.1038/nature01392), and preserves source and calculation metadata inside the project. No prediction weights are bundled with the VSIX.

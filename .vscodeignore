@@ -9,3 +9,8 @@ scripts/**
 *.vsix
 .vscode-test
 .gitignore
+.venv/**
+work/**
+worker/__pycache__/**
+pnpm-lock.yaml
+pnpm-workspace.yaml

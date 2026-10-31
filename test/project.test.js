@@ -21,5 +21,5 @@ test('rejects invalid ranges, malformed provenance and altered input', () => {
   withRange.records[0].annotations[0].evidence = 'computed'; assert.throws(() => validateProject(withRange));
 });
 test('rejects an import whose retained original plus normalized records cannot be saved', () => {
-  assert.throws(() => newProject('>large\n' + 'A'.repeat(6 * 1024 * 1024)), /including original input/);
+  assert.throws(() => newProject('>large\n' + 'A'.repeat(33 * 1024 * 1024)), /64 MiB/);
 });

@@ -1,0 +1,626 @@
+{
+  "id": "human-constant-uniprot-2026-10-29",
+  "license": "UniProt CC BY 4.0",
+  "source": "https://www.uniprot.org/help/license",
+  "scope": "Selected reviewed human constant-region reference sequences; not a complete species/allele catalogue",
+  "entries": [
+    {
+      "accession": "P01857",
+      "name": "IGHG1_HUMAN",
+      "title": "Immunoglobulin heavy constant gamma 1",
+      "sequence": "ASTKGPSVFPLAPSSKSTSGGTAALGCLVKDYFPEPVTVSWNSGALTSGVHTFPAVLQSSGLYSLSSVVTVPSSSLGTQTYICNVNHKPSNTKVDKKVEPKSCDKTHTCPPCPAPELLGGPSVFLFPPKPKDTLMISRTPEVTCVVVDVSHEDPEVKFNWYVDGVEVHNAKTKPREEQYNSTYRVVSVLTVLHQDWLNGKEYKCKVSNKALPAPIEKTISKAKGQPREPQVYTLPPSRDELTKNQVSLTCLVKGFYPSDIAVEWESNGQPENNYKTTPPVLDSDGSFFLYSKLTVDKSRWQQGNVFSCSVMHEALHNHYTQKSLSLSPELQLEESCAEAQDGELDGLWTTITIFITLFLLSVCYSATVTFFKVKWIFSSVVDLKQTIIPDYRNMIGQGA",
+      "version": {
+        "firstPublicDate": "1986-07-21",
+        "lastAnnotationUpdateDate": "2026-09-02",
+        "lastSequenceUpdateDate": "2023-05-03",
+        "entryVersion": 244,
+        "sequenceVersion": 2
+      },
+      "source": "https://www.uniprot.org/uniprotkb/P01857",
+      "sourceDigest": "ea77784aae052d52b5aca547d58331d90f7e7048df2de66bbfc626afc32cf7bb",
+      "domains": [
+        {
+          "kind": "CH1",
+          "start0": 5,
+          "end0": 99,
+          "description": "Ig-like 1",
+          "evidence": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "PROSITE-ProRule",
+              "id": "PRU00114"
+            }
+          ]
+        },
+        {
+          "kind": "CH2",
+          "start0": 120,
+          "end0": 220,
+          "description": "Ig-like 2",
+          "evidence": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "PROSITE-ProRule",
+              "id": "PRU00114"
+            }
+          ]
+        },
+        {
+          "kind": "CH3",
+          "start0": 228,
+          "end0": 325,
+          "description": "Ig-like 3",
+          "evidence": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "PROSITE-ProRule",
+              "id": "PRU00114"
+            }
+          ]
+        },
+        {
+          "kind": "hinge",
+          "start0": 98,
+          "end0": 110,
+          "description": "Hinge",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "accession": "P01859",
+      "name": "IGHG2_HUMAN",
+      "title": "Immunoglobulin heavy constant gamma 2",
+      "sequence": "ASTKGPSVFPLAPCSRSTSESTAALGCLVKDYFPEPVTVSWNSGALTSGVHTFPAVLQSSGLYSLSSVVTVPSSNFGTQTYTCNVDHKPSNTKVDKTVERKCCVECPPCPAPPVAGPSVFLFPPKPKDTLMISRTPEVTCVVVDVSHEDPEVQFNWYVDGVEVHNAKTKPREEQFNSTFRVVSVLTVVHQDWLNGKEYKCKVSNKGLPAPIEKTISKTKGQPREPQVYTLPPSREEMTKNQVSLTCLVKGFYPSDISVEWESNGQPENNYKTTPPMLDSDGSFFLYSKLTVDKSRWQQGNVFSCSVMHEALHNHYTQKSLSLSPELQLEESCAEAQDGELDGLWTTITIFITLFLLSVCYSATITFFKVKWIFSSVVDLKQTIVPDYRNMIRQGA",
+      "version": {
+        "firstPublicDate": "1986-07-21",
+        "lastAnnotationUpdateDate": "2026-09-02",
+        "lastSequenceUpdateDate": "2023-05-03",
+        "entryVersion": 204,
+        "sequenceVersion": 3
+      },
+      "source": "https://www.uniprot.org/uniprotkb/P01859",
+      "sourceDigest": "58fc734508458c526d5aad890502a76a7b6aacaa200549b8d105ba2fc89697ad",
+      "domains": [
+        {
+          "kind": "CH1",
+          "start0": 5,
+          "end0": 99,
+          "description": "Ig-like 1",
+          "evidence": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "PROSITE-ProRule",
+              "id": "PRU00114"
+            }
+          ]
+        },
+        {
+          "kind": "CH2",
+          "start0": 116,
+          "end0": 216,
+          "description": "Ig-like 2",
+          "evidence": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "PROSITE-ProRule",
+              "id": "PRU00114"
+            }
+          ]
+        },
+        {
+          "kind": "CH3",
+          "start0": 224,
+          "end0": 321,
+          "description": "Ig-like 3",
+          "evidence": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "PROSITE-ProRule",
+              "id": "PRU00114"
+            }
+          ]
+        },
+        {
+          "kind": "hinge",
+          "start0": 98,
+          "end0": 110,
+          "description": "Hinge",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "accession": "P01860",
+      "name": "IGHG3_HUMAN",
+      "title": "Immunoglobulin heavy constant gamma 3",
+      "sequence": "ASTKGPSVFPLAPCSRSTSGGTAALGCLVKDYFPEPVTVSWNSGALTSGVHTFPAVLQSSGLYSLSSVVTVPSSSLGTQTYTCNVNHKPSNTKVDKRVELKTPLGDTTHTCPRCPEPKSCDTPPPCPRCPEPKSCDTPPPCPRCPEPKSCDTPPPCPRCPAPELLGGPSVFLFPPKPKDTLMISRTPEVTCVVVDVSHEDPEVQFKWYVDGVEVHNAKTKPREEQYNSTFRVVSVLTVLHQDWLNGKEYKCKVSNKALPAPIEKTISKTKGQPREPQVYTLPPSREEMTKNQVSLTCLVKGFYPSDIAVEWESSGQPENNYNTTPPMLDSDGSFFLYSKLTVDKSRWQQGNIFSCSVMHEALHNRFTQKSLSLSPELQLEESCAEAQDGELDGLWTTITIFITLFLLSVCYSATVTFFKVKWIFSSVVDLKQTIIPDYRNMIGQGA",
+      "version": {
+        "firstPublicDate": "1986-07-21",
+        "lastAnnotationUpdateDate": "2026-09-02",
+        "lastSequenceUpdateDate": "2023-05-03",
+        "entryVersion": 206,
+        "sequenceVersion": 3
+      },
+      "source": "https://www.uniprot.org/uniprotkb/P01860",
+      "sourceDigest": "4076d5c13198669a659d89c479e07ef2ca59d14c74c43a6fa75d79db1254cdc0",
+      "domains": [
+        {
+          "kind": "CH1",
+          "start0": 5,
+          "end0": 99,
+          "description": "Ig-like 1",
+          "evidence": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "PROSITE-ProRule",
+              "id": "PRU00114"
+            }
+          ]
+        },
+        {
+          "kind": "CH2",
+          "start0": 167,
+          "end0": 267,
+          "description": "Ig-like 2",
+          "evidence": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "PROSITE-ProRule",
+              "id": "PRU00114"
+            }
+          ]
+        },
+        {
+          "kind": "CH3",
+          "start0": 275,
+          "end0": 372,
+          "description": "Ig-like 3",
+          "evidence": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "PROSITE-ProRule",
+              "id": "PRU00114"
+            }
+          ]
+        },
+        {
+          "kind": "hinge",
+          "start0": 98,
+          "end0": 160,
+          "description": "Hinge",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "accession": "P01861",
+      "name": "IGHG4_HUMAN",
+      "title": "Immunoglobulin heavy constant gamma 4",
+      "sequence": "ASTKGPSVFPLAPCSRSTSESTAALGCLVKDYFPEPVTVSWNSGALTSGVHTFPAVLQSSGLYSLSSVVTVPSSSLGTKTYTCNVDHKPSNTKVDKRVESKYGPPCPSCPAPEFLGGPSVFLFPPKPKDTLMISRTPEVTCVVVDVSQEDPEVQFNWYVDGVEVHNAKTKPREEQFNSTYRVVSVLTVLHQDWLNGKEYKCKVSNKGLPSSIEKTISKAKGQPREPQVYTLPPSQEEMTKNQVSLTCLVKGFYPSDIAVEWESNGQPENNYKTTPPVLDSDGSFFLYSRLTVDKSRWQEGNVFSCSVMHEALHNHYTQKSLSLSLELQLEESCAEAQDGELDGLWTTITIFITLFLLSVCYSATVTFFKVKWIFSSVVDLKQTIVPDYRNMIRQGA",
+      "version": {
+        "firstPublicDate": "1986-07-21",
+        "lastAnnotationUpdateDate": "2026-09-02",
+        "lastSequenceUpdateDate": "2023-05-03",
+        "entryVersion": 195,
+        "sequenceVersion": 2
+      },
+      "source": "https://www.uniprot.org/uniprotkb/P01861",
+      "sourceDigest": "c613846d3d1d20a2acc9a60a78806f4084547656b8c6516a6c6941eb6dc89cbf",
+      "domains": [
+        {
+          "kind": "CH1",
+          "start0": 5,
+          "end0": 99,
+          "description": "Ig-like 1",
+          "evidence": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "PROSITE-ProRule",
+              "id": "PRU00114"
+            }
+          ]
+        },
+        {
+          "kind": "CH2",
+          "start0": 117,
+          "end0": 217,
+          "description": "Ig-like 2",
+          "evidence": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "PROSITE-ProRule",
+              "id": "PRU00114"
+            }
+          ]
+        },
+        {
+          "kind": "CH3",
+          "start0": 225,
+          "end0": 322,
+          "description": "Ig-like 3",
+          "evidence": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "PROSITE-ProRule",
+              "id": "PRU00114"
+            }
+          ]
+        },
+        {
+          "kind": "hinge",
+          "start0": 98,
+          "end0": 110,
+          "description": "Hinge",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "accession": "P01871",
+      "name": "IGHM_HUMAN",
+      "title": "Immunoglobulin heavy constant mu",
+      "sequence": "GSASAPTLFPLVSCENSPSDTSSVAVGCLAQDFLPDSITFSWKYKNNSDISSTRGFPSVLRGGKYAATSQVLLPSKDVMQGTDEHVVCKVQHPNGNKEKNVPLPVIAELPPKVSVFVPPRDGFFGNPRKSKLICQATGFSPRQIQVSWLREGKQVGSGVTTDQVQAEAKESGPTTYKVTSTLTIKESDWLGQSMFTCRVDHRGLTFQQNASSMCVPDQDTAIRVFAIPPSFASIFLTKSTKLTCLVTDLTTYDSVTISWTRQNGEAVKTHTNISESHPNATFSAVGEASICEDDWNSGERFTCTVTHTDLPSPLKQTISRPKGVALHRPDVYLLPPAREQLNLRESATITCLVTGFSPADVFVQWMQRGQPLSPEKYVTSAPMPEPQAPGRYFAHSILTVSEEEWNTGETYTCVVAHEALPNRVTERTVDKSTEGEVSADEEGFENLWATASTFIVLFLLSLFYSTTVTLFKVK",
+      "version": {
+        "firstPublicDate": "1986-07-21",
+        "lastAnnotationUpdateDate": "2026-09-02",
+        "lastSequenceUpdateDate": "2023-05-03",
+        "entryVersion": 224,
+        "sequenceVersion": 5
+      },
+      "source": "https://www.uniprot.org/uniprotkb/P01871",
+      "sourceDigest": "132737d67434aef4aed5632c011bc31d87c0edc347786145112e920cf410ee19",
+      "domains": [
+        {
+          "kind": "CH1",
+          "start0": 5,
+          "end0": 102,
+          "description": "Ig-like 1",
+          "evidence": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "PROSITE-ProRule",
+              "id": "PRU00114"
+            }
+          ]
+        },
+        {
+          "kind": "CH2",
+          "start0": 110,
+          "end0": 211,
+          "description": "Ig-like 2",
+          "evidence": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "PROSITE-ProRule",
+              "id": "PRU00114"
+            }
+          ]
+        },
+        {
+          "kind": "CH3",
+          "start0": 228,
+          "end0": 319,
+          "description": "Ig-like 3",
+          "evidence": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "PROSITE-ProRule",
+              "id": "PRU00114"
+            }
+          ]
+        },
+        {
+          "kind": "CH4",
+          "start0": 328,
+          "end0": 430,
+          "description": "Ig-like 4",
+          "evidence": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "PROSITE-ProRule",
+              "id": "PRU00114"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "accession": "P01876",
+      "name": "IGHA1_HUMAN",
+      "title": "Immunoglobulin heavy constant alpha 1",
+      "sequence": "ASPTSPKVFPLSLCSTQPDGNVVIACLVQGFFPQEPLSVTWSESGQGVTARNFPPSQDASGDLYTTSSQLTLPATQCLAGKSVTCHVKHYTNPSQDVTVPCPVPSTPPTPSPSTPPTPSPSCCHPRLSLHRPALEDLLLGSEANLTCTLTGLRDASGVTFTWTPSSGKSAVQGPPERDLCGCYSVSSVLPGCAEPWNHGKTFTCTAAYPESKTPLTATLSKSGNTFRPEVHLLPPPSEELALNELVTLTCLARGFSPKDVLVRWLQGSQELPREKYLTWASRQEPSQGTTTFAVTSILRVAAEDWKKGDTFSCMVGHEALPLAFTQKTIDRLADWQMPPPYVVLDLPQETLEEETPGANLWPTTITFLTLFLLSLFYSTALTVTSVRGPSGNREGPQY",
+      "version": {
+        "firstPublicDate": "1986-07-21",
+        "lastAnnotationUpdateDate": "2026-09-02",
+        "lastSequenceUpdateDate": "2023-05-03",
+        "entryVersion": 225,
+        "sequenceVersion": 3
+      },
+      "source": "https://www.uniprot.org/uniprotkb/P01876",
+      "sourceDigest": "2d16103bc630f1aa2983204b6a68ac338bab990f74f9777abc076681b1c9a87e",
+      "domains": [
+        {
+          "kind": "CH1",
+          "start0": 5,
+          "end0": 98,
+          "description": "Ig-like 1",
+          "evidence": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "PROSITE-ProRule",
+              "id": "PRU00114"
+            }
+          ]
+        },
+        {
+          "kind": "CH2",
+          "start0": 124,
+          "end0": 220,
+          "description": "Ig-like 2",
+          "evidence": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "PROSITE-ProRule",
+              "id": "PRU00114"
+            }
+          ]
+        },
+        {
+          "kind": "CH3",
+          "start0": 227,
+          "end0": 330,
+          "description": "Ig-like 3",
+          "evidence": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "PROSITE-ProRule",
+              "id": "PRU00114"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "accession": "P01877",
+      "name": "IGHA2_HUMAN",
+      "title": "Immunoglobulin heavy constant alpha 2",
+      "sequence": "ASPTSPKVFPLSLDSTPQDGNVVVACLVQGFFPQEPLSVTWSESGQNVTARNFPPSQDASGDLYTTSSQLTLPATQCPDGKSVTCHVKHYTNSSQDVTVPCRVPPPPPCCHPRLSLHRPALEDLLLGSEANLTCTLTGLRDASGATFTWTPSSGKSAVQGPPERDLCGCYSVSSVLPGCAQPWNHGETFTCTAAHPELKTPLTANITKSGNTFRPEVHLLPPPSEELALNELVTLTCLARGFSPKDVLVRWLQGSQELPREKYLTWASRQEPSQGTTTYAVTSILRVAAEDWKKGETFSCMVGHEALPLAFTQKTIDRMAGSCCVADWQMPPPYVVLDLPQETLEEETPGANLWPTTITFLTLFLLSLFYSTALTVTSVRGPSGKREGPQY",
+      "version": {
+        "firstPublicDate": "1986-07-21",
+        "lastAnnotationUpdateDate": "2026-09-02",
+        "lastSequenceUpdateDate": "2023-05-03",
+        "entryVersion": 199,
+        "sequenceVersion": 5
+      },
+      "source": "https://www.uniprot.org/uniprotkb/P01877",
+      "sourceDigest": "df7d7ac4bd4d2af619ae0560a93fd4a3de43a1ae782ca8f9ca5e21645beeec2e",
+      "domains": [
+        {
+          "kind": "CH1",
+          "start0": 5,
+          "end0": 98,
+          "description": "Ig-like 1",
+          "evidence": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "PROSITE-ProRule",
+              "id": "PRU00114"
+            }
+          ]
+        },
+        {
+          "kind": "CH2",
+          "start0": 111,
+          "end0": 207,
+          "description": "Ig-like 2",
+          "evidence": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "PROSITE-ProRule",
+              "id": "PRU00114"
+            }
+          ]
+        },
+        {
+          "kind": "CH3",
+          "start0": 214,
+          "end0": 317,
+          "description": "Ig-like 3",
+          "evidence": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "PROSITE-ProRule",
+              "id": "PRU00114"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "accession": "P01880",
+      "name": "IGHD_HUMAN",
+      "title": "Immunoglobulin heavy constant delta",
+      "sequence": "APTKAPDVFPIISGCRHPKDNSPVVLACLITGYHPTSVTVTWYMGTQSQPQRTFPEIQRRDSYYMTSSQLSTPLQQWRQGEYKCVVQHTASKSKKEIFRWPESPKAQASSVPTAQPQAEGSLAKATTAPATTRNTGRGGEEKKKEKEKEEQEERETKTPECPSHTQPLGVYLLTPAVQDLWLRDKATFTCFVVGSDLKDAHLTWEVAGKVPTGGVEEGLLERHSNGSQSQHSRLTLPRSLWNAGTSVTCTLNHPSLPPQRLMALREPAAQAPVKLSLNLLASSDPPEAASWLLCEVSGFSPPNILLMWLEDQREVNTSGFAPARPPPQPRSTTFWAWSVLRVPAPPSPQPATYTCVVSHEDSRTLLNASRSLEVSYLAMTPLIPQSKDENSDDYTTFDDVGSLWTTLSTFVALFILTLLYSGIVTFIKVK",
+      "version": {
+        "firstPublicDate": "1986-07-21",
+        "lastAnnotationUpdateDate": "2026-09-02",
+        "lastSequenceUpdateDate": "2023-05-03",
+        "entryVersion": 182,
+        "sequenceVersion": 4
+      },
+      "source": "https://www.uniprot.org/uniprotkb/P01880",
+      "sourceDigest": "b7d9334b5e971487427b5743db42ba00fa4dddf65cfd09b6b6ef508af13ed1f0",
+      "domains": [
+        {
+          "kind": "CH1",
+          "start0": 5,
+          "end0": 98,
+          "description": "Ig-like 1",
+          "evidence": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "PROSITE-ProRule",
+              "id": "PRU00114"
+            }
+          ]
+        },
+        {
+          "kind": "CH2",
+          "start0": 174,
+          "end0": 263,
+          "description": "Ig-like 2",
+          "evidence": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "PROSITE-ProRule",
+              "id": "PRU00114"
+            }
+          ]
+        },
+        {
+          "kind": "CH3",
+          "start0": 266,
+          "end0": 373,
+          "description": "Ig-like 3",
+          "evidence": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "PROSITE-ProRule",
+              "id": "PRU00114"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "accession": "P01854",
+      "name": "IGHE_HUMAN",
+      "title": "Immunoglobulin heavy constant epsilon",
+      "sequence": "ASTQSPSVFPLTRCCKNIPSNATSVTLGCLATGYFPEPVMVTWDTGSLNGTTMTLPATTLTLSGHYATISLLTVSGAWAKQMFTCRVAHTPSSTDWVDNKTFSVCSRDFTPPTVKILQSSCDGGGHFPPTIQLLCLVSGYTPGTINITWLEDGQVMDVDLSTASTTQEGELASTQSELTLSQKHWLSDRTYTCQVTYQGHTFEDSTKKCADSNPRGVSAYLSRPSPFDLFIRKSPTITCLVVDLAPSKGTVNLTWSRASGKPVNHSTRKEEKQRNGTLTVTSTLPVGTRDWIEGETYQCRVTHPHLPRALMRSTTKTSGPRAAPEVYAFATPEWPGSRDKRTLACLIQNFMPEDISVQWLHNEVQLPDARHSTTQPRKTKGSGFFVFSRLEVTRAEWEQKDEFICRAVHEAASPSQTVQRAVSVNPGLAGGSAQSQRAPDRVLCHSGQQQGLPRAAGGSVPHPRCHCGAGRADWPGPPELDVCVEEAEGEAPWTWTGLCIFAALFLLSVSYSAAITLLMVQRFLSATRQGRPQTSLDYTNVLQPHA",
+      "version": {
+        "firstPublicDate": "1986-07-21",
+        "lastAnnotationUpdateDate": "2026-09-02",
+        "lastSequenceUpdateDate": "2023-05-03",
+        "entryVersion": 204,
+        "sequenceVersion": 2
+      },
+      "source": "https://www.uniprot.org/uniprotkb/P01854",
+      "sourceDigest": "637baffb20389569200c281abcb7361f4634972f9c41567b7da0bd819ae2ac10",
+      "domains": [
+        {
+          "kind": "CH1",
+          "start0": 5,
+          "end0": 103,
+          "description": "Ig-like 1",
+          "evidence": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "PROSITE-ProRule",
+              "id": "PRU00114"
+            }
+          ]
+        },
+        {
+          "kind": "CH2",
+          "start0": 111,
+          "end0": 210,
+          "description": "Ig-like 2",
+          "evidence": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "PROSITE-ProRule",
+              "id": "PRU00114"
+            }
+          ]
+        },
+        {
+          "kind": "CH3",
+          "start0": 213,
+          "end0": 318,
+          "description": "Ig-like 3",
+          "evidence": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "PROSITE-ProRule",
+              "id": "PRU00114"
+            }
+          ]
+        },
+        {
+          "kind": "CH4",
+          "start0": 323,
+          "end0": 423,
+          "description": "Ig-like 4",
+          "evidence": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "PROSITE-ProRule",
+              "id": "PRU00114"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "accession": "P01834",
+      "name": "IGKC_HUMAN",
+      "title": "Immunoglobulin kappa constant",
+      "sequence": "RTVAAPSVFIFPPSDEQLKSGTASVVCLLNNFYPREAKVQWKVDNALQSGNSQESVTEQDSKDSTYSLSSTLTLSKADYEKHKVYACEVTHQGLSSPVTKSFNRGEC",
+      "version": {
+        "firstPublicDate": "1986-07-21",
+        "lastAnnotationUpdateDate": "2026-09-02",
+        "lastSequenceUpdateDate": "2017-03-15",
+        "entryVersion": 221,
+        "sequenceVersion": 2
+      },
+      "source": "https://www.uniprot.org/uniprotkb/P01834",
+      "sourceDigest": "4d7e7e9f7d850b73f0a2bd22f003965d61c0e1f0e450a3734e9ae1e400d0a2bf",
+      "domains": [
+        {
+          "kind": "CL",
+          "start0": 5,
+          "end0": 103,
+          "description": "Ig-like",
+          "evidence": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "PROSITE-ProRule",
+              "id": "PRU00114"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "accession": "P0DOY2",
+      "name": "IGLC2_HUMAN",
+      "title": "Immunoglobulin lambda constant 2",
+      "sequence": "GQPKAAPSVTLFPPSSEELQANKATLVCLISDFYPGAVTVAWKADSSPVKAGVETTTPSKQSNNKYAASSYLSLTPEQWKSHRSYSCQVTHEGSTVEKTVAPTECS",
+      "version": {
+        "firstPublicDate": "2017-03-15",
+        "lastAnnotationUpdateDate": "2026-09-02",
+        "lastSequenceUpdateDate": "2017-03-15",
+        "entryVersion": 48,
+        "sequenceVersion": 1
+      },
+      "source": "https://www.uniprot.org/uniprotkb/P0DOY2",
+      "sourceDigest": "6d4315893a24b34005c44017289e99165bccf0ab79f4fc32a5e0d19084be239e",
+      "domains": [
+        {
+          "kind": "CL",
+          "start0": 6,
+          "end0": 101,
+          "description": "Ig-like",
+          "evidence": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "PROSITE-ProRule",
+              "id": "PRU00114"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

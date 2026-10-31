@@ -1,0 +1,4 @@
+ImmuneBuilder==1.2
+anarci==2026.2.13.2
+openmm==8.6.1
+pdbfixer==1.12.0

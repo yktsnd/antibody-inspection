@@ -1,8 +1,8 @@
 {
   "name": "antibody-inspection",
   "displayName": "Antibody Inspection",
-  "description": "Local-first antibody sequence inspection for VS Code.",
-  "version": "0.2.0",
+  "description": "Inspect antibody sequences, structures and evidence in one local research workspace. Includes an offline guided demo.",
+  "version": "0.4.0",
   "publisher": "yktsnd",
   "license": "Apache-2.0",
   "engines": {
@@ -12,24 +12,93 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:antibodyInspection.open"
+    "onCommand:antibodyInspection.open",
+    "onView:antibodyInspection.launcher"
   ],
   "main": "./src/extension.js",
   "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "antibodyInspection",
+          "title": "Antibody Inspection",
+          "icon": "media/antibody.svg"
+        }
+      ]
+    },
+    "views": {
+      "antibodyInspection": [
+        {
+          "id": "antibodyInspection.launcher",
+          "name": "Research workspace"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "antibodyInspection.launcher",
+        "contents": "Follow antibody sequences into structure and evidence.\n[Explore guided demo](command:antibodyInspection.openDemo)\nReal Herceptin / HER2 data. No Python setup needed.\n[Open workspace](command:antibodyInspection.open)"
+      }
+    ],
     "commands": [
       {
         "command": "antibodyInspection.open",
         "title": "Antibody Inspection: Open Workspace"
+      },
+      {
+        "command": "antibodyInspection.openDemo",
+        "title": "Antibody Inspection: Explore Guided Demo"
+      }
+    ],
+    "configuration": {
+      "title": "Antibody Inspection",
+      "properties": {
+        "antibodyInspection.pythonPath": {
+          "type": "string",
+          "default": "",
+          "scope": "machine",
+          "description": "Python executable for the local ANARCII and Biopython runtime."
+        }
+      }
+    },
+    "walkthroughs": [
+      {
+        "id": "antibodyInspection.gettingStarted",
+        "title": "Inspect your first antibody",
+        "description": "Move from sequence to structure with a fully local public-data example.",
+        "steps": [
+          {
+            "id": "explore",
+            "title": "Explore a real research example",
+            "description": "Open seven precomputed observations for Herceptin Fab / HER2. No Python setup is required.\n[Explore guided demo](command:antibodyInspection.openDemo)",
+            "media": {
+              "markdown": "docs/walkthrough.md"
+            },
+            "completionEvents": [
+              "onCommand:antibodyInspection.openDemo"
+            ]
+          },
+          {
+            "id": "ownData",
+            "title": "Bring your own sequences",
+            "description": "Open the workspace and choose Import sequences. Review the columns before importing.\n[Open workspace](command:antibodyInspection.open)",
+            "media": {
+              "markdown": "docs/walkthrough.md"
+            }
+          }
+        ]
       }
     ]
   },
   "scripts": {
     "test": "node --test test/*.test.js",
     "check": "node scripts/check.js",
-    "package": "vsce package --no-dependencies",
-    "test:electron": "node scripts/test-electron.js"
+    "package": "node scripts/package-local.js",
+    "test:electron": "node scripts/test-electron.js",
+    "package:marketplace": "vsce package --no-dependencies"
   },
   "devDependencies": {
+    "3dmol": "2.5.3",
     "@vscode/test-electron": "2.5.2",
     "@vscode/vsce": "4.1.0",
     "jsdom": "26.1.0"
@@ -40,5 +109,32 @@
   },
   "extensionKind": [
     "ui"
-  ]
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true,
+      "description": "Only explicitly selected local files and the bundled worker are used. Workspace scripts and configuration are never executed."
+    },
+    "virtualWorkspaces": false
+  },
+  "overrides": {
+    "@azure/msal-node": "^7.1.0"
+  },
+  "keywords": [
+    "antibody",
+    "bioinformatics",
+    "protein",
+    "structure",
+    "IMGT",
+    "research"
+  ],
+  "homepage": "https://github.com/yktsnd/antibody-inspection#readme",
+  "bugs": {
+    "url": "https://github.com/yktsnd/antibody-inspection/issues"
+  },
+  "icon": "media/icon.png",
+  "galleryBanner": {
+    "color": "#101b2c",
+    "theme": "dark"
+  }
 }

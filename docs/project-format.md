@@ -1,20 +1,25 @@
-# Shipped project format
+# Project format — 0.4.0
 
-The runtime stores a UTF-8 JSON object with `format: "antibody-inspection"` and `version: 1`. This is the small R0 format. It is **not** the richer future project contract in the design specification.
+UTF-8 JSON with `format: "antibody-inspection"`, `version: 1`. Older sequence-only projects remain readable. Optional research fields extend the original schema; this is not yet the full typed evidence graph required by R1.
 
-| Field | Meaning |
+| Field | Contents |
 | --- | --- |
-| `source.type` | `fasta` |
-| `source.raw` | Complete original input text |
-| `records` | Ordered sequence records, corresponding one-for-one with reparsed original FASTA |
-| `records[].id` | Unique immutable record ID; duplicate display names are allowed |
-| `records[].name`, `sequence`, `length` | Header, normalized uppercase sequence and character count |
-| `records[].annotations` | User-supplied ranges: `id`, `kind`, 1-based inclusive `start`/`end`, free-text `definition`, `evidence: "user"` |
-| `records[].note` | Per-record plain-text observation, up to 20,000 characters |
-| `view.selectedRecordId` | Selected record |
-| `view.referenceId` | Optional alignment reference |
-| `view.annotationId` | Optional selected annotation belonging to the selected record |
+| source | Canonical FASTA used to validate ordered records |
+| sources | Original imported table/file, digest and provenance where available |
+| records | Immutable ID, display name, sequence, length, note, manual annotations, explicit construct/role/alphabet |
+| records[].analysis | Input SHA-256, engine versions, IMGT/Kabat domains/residue maps, independent CDR definitions, germline candidates, constant-reference matches, properties, motif hits, status |
+| records[].translation | Parent sequence ID, explicit frame, standard-code identifier, codon coordinates |
+| structures | Original PDB/mmCIF, SHA-256, normalized protein atoms, residue/chain identities, mappings, contact/SASA results, assembly operators and instance IDs, versioned surface profiles with coordinate digests |
+| observations | Record and specimen IDs, endpoint, value, unit, censoring operator, conditions and source |
+| entities | Typed construct chain copies, specimens, antigens and source records with explicit IDs and links |
+| regionSearch | Selected query range, target ranges, alignment scores, coverage, protocol and input digests |
+| demo | Bundled tour steps and recorded view state |
+| references | Versioned reference-pack metadata, numeric/null values and digest |
+| view | Selected record/tab/structure, input residue range, numbering/CDR selectors, demo step, cross-chain targets, pins, camera, superposition transform and fit/evaluation definitions |
+| snapshots | Named view state, timestamp and sequence digests |
 
-The view is optional so v0.1.0 projects still open. The current app writes it on new projects and supplies a default for older projects. References and range bounds are validated. Record content must match the normalized original FASTA; editing JSON to replace sequences while retaining analyses is rejected. Use a new import for changed sequence input.
+Scientific residue intervals use zero-based half-open coordinates. Original manual annotations retain their explicit one-based inclusive `start`/`end` fields for backwards compatibility. The viewer converts them; no silent coordinate relabeling occurs.
 
-A saved file contains sequence data and notes in plain text. There is no encryption, external asset store, schema migration engine, file locking, automatic backup or scientific analysis cache. Generic alignment is recalculated on request and is not stored. Do not edit the file concurrently from multiple applications.
+Validation checks original sequence agreement, unique record/annotation IDs, ranges, analysis input digests and numbered-residue round trips, original structure digests, finite coordinates, mapping bounds, selected IDs/ranges and finite measurements. Maximum complete serialized project size is 64 MiB. Some optional scientific result objects are not yet covered by a formal JSON Schema.
+
+Projects contain original data in plain text. A single recovery copy is written atomically to extension global storage after edits, and on panel disposal. Explicit project saves are separate. No database, multi-writer locking or general revision/migration service is implemented. Concurrent edits of the same saved file are unsupported.

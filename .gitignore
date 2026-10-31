@@ -5,3 +5,6 @@ test-results/
 node_modules
 .vscode-test
 SHA256SUMS
+.venv/
+work/
+__pycache__/
